@@ -28,7 +28,7 @@ function validateEmail(email) {
 }
 
 function validateMobile(mobile) {
-  const mobileRegex = /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$/gm;
+  const mobileRegex = /^\d{10}$/;
   return mobileRegex.test(mobile);
 }
 
@@ -146,7 +146,6 @@ function validation() {
       document.getElementById("password").value = "";
 
       viewData();
-      maleFilterData();
       dobFilterData();
     }
   }
@@ -162,41 +161,22 @@ function validation() {
   <tr>
         <td>${val.name}</td>
         <td>${val.date_of_birth.day}-${val.date_of_birth.month}-${val.date_of_birth.year}</td>
-        <td>${val.phone}</td>
         <td>${val.email}</td>
         <td>${val.address}</td>
+        <td>${val.phone}</td>
         <td>${val.gender}</td>
       </tr>
   `;
       document.getElementById("record").innerHTML = tbl;
     });
   }
-  function maleFilterData() {
-    let tbl = "";
-    let storedata = JSON.parse(localStorage.getItem("store"));
-    let maledata = storedata.filter((val, index) => {
-      return val.gender == "male";
-    });
-    maledata.map((val) => {
-      tbl += `
-  <tr>
-        <td>${val.name}</td>
-        <td>${val.date_of_birth.day}-${val.date_of_birth.month}-${val.date_of_birth.year}</td>
-        <td>${val.phone}</td>
-        <td>${val.email}</td>
-        <td>${val.address}</td>
-        <td>${val.gender}</td>
-      </tr>
-  `;
-    });
-    document.getElementById("malefilter").innerHTML = tbl;
-  }
+  
 
   function dobFilterData() {
     let tbl = "";
     let storedata = JSON.parse(localStorage.getItem("store"));
     let dobdata = storedata.filter((val, index) => {
-      return val.date_of_birth.year <= 2000;
+      return val.date_of_birth.year >= 2000;
     });
     dobdata.map((val) => {
       tbl += `

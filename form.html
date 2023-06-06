@@ -58,7 +58,7 @@
         
         <div class="form-group">
           <label for="mobile">Mobile Number</label>
-          <input type="tel" id="mobile" placeholder="Enter your mobile number" autocomplete="mobile"  pattern="[0-9]{10}" required>
+          <input type="tel" id="mobile" placeholder="Enter your mobile number" autocomplete="mobile" maxlength="10" required>
           <span id="mobile-error" class="error"></span>
         </div>
       
@@ -87,24 +87,8 @@
       <tbody id=record class="text-center"></tbody>
     </table>
     
-    <table class="table">
-      <h3 class="mt-5 text-uppercase text-center">male filter</h3>
-      <thead>
-        <tr class="text-center">
-          <th>Full name</th>
-          <th>date of birth</th>
-          <th>email</th>
-          <th>contact No</th>
-          <th>address</th>
-          <th>gender</th>
-        </tr>
-      </thead>
-
-      <tbody id=malefilter class="text-center"></tbody>
-    </table>
-    
     <table class="table table-secondary table-striped ">
-      <h3 class="mt-5 text-uppercase text-center">dob before 2000</h3>
+      <h3 class="mt-5 text-uppercase text-center">dob after 2000</h3>
       <thead>
         <tr class="text-center text-capitalize">
           <th>Full name</th>
