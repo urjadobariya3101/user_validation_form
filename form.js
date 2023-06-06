@@ -183,8 +183,8 @@ function validation() {
   <tr>
         <td>${val.name}</td>
         <td>${val.date_of_birth.day}-${val.date_of_birth.month}-${val.date_of_birth.year}</td>
-        <td>${val.phone}</td>
         <td>${val.email}</td>
+        <td>${val.phone}</td>
         <td>${val.address}</td>
         <td>${val.gender}</td>
       </tr>
